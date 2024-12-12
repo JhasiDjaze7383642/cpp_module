@@ -1,0 +1,104 @@
+#include <iostream>
+#include <cstring>
+
+class MyClass {
+private:
+    char* data;
+    
+public:
+    // Default constructor
+    MyClass() : data(nullptr) {
+        std::cout << "Default constructor called\n";
+    }
+
+    // Parameterized constructor
+    MyClass(const char* str) {
+        if (str) {
+            data = new char[strlen(str) + 1];
+            strcpy(data, str);
+        } else {
+            data = nullptr;
+        }
+        std::cout << "Parameterized constructor called\n";
+    }
+
+    // Destructor
+    ~MyClass() {
+        delete[] data;
+        std::cout << "Destructor called\n";
+    }
+
+    // Copy constructor
+    MyClass(const MyClass& other) {
+        if (other.data) {
+            data = new char[strlen(other.data) + 1];
+            strcpy(data, other.data);
+        } else {
+            data = nullptr;
+        }
+        std::cout << "Copy constructor called\n";
+    }
+
+    // Copy assignment operator
+    MyClass& operator=(const MyClass& other) {
+        if (this != &other) {  // Check for self-assignment
+            delete[] data;  // Free existing resource
+            if (other.data) {
+                data = new char[strlen(other.data) + 1];
+                strcpy(data, other.data);
+            } else {
+                data = nullptr;
+            }
+        }
+        std::cout << "Copy assignment operator called\n";
+        return *this;
+    }
+
+    // Move constructor (C++11)
+    MyClass(MyClass&& other) noexcept : data(other.data) {
+        other.data = nullptr;  // Leave other in a valid state
+        std::cout << "Move constructor called\n";
+    }
+
+    // Move assignment operator (C++11)
+    MyClass& operator=(MyClass&& other) noexcept {
+        if (this != &other) {
+            delete[] data;  // Free existing resource
+            data = other.data;
+            other.data = nullptr;  // Leave other in a valid state
+        }
+        std::cout << "Move assignment operator called\n";
+        return *this;
+    }
+
+    // For printing data
+    void print() const {
+        if (data) {
+            std::cout << "Data: " << data << "\n";
+        } else {
+            std::cout << "Data is null\n";
+        }
+    }
+};
+
+int main() {
+    MyClass obj1;  // Default constructor
+    MyClass obj2("Hello, World!");  // Parameterized constructor
+    obj2.print();
+    
+    MyClass obj3 = obj2;  // Copy constructor
+    obj3.print();
+    
+    MyClass obj4;
+    obj4 = obj2;  // Copy assignment operator
+    obj4.print();
+
+    MyClass obj5 = std::move(obj2);  // Move constructor
+    obj5.print();
+    
+    obj4 = std::move(obj3);  // Move assignment operator
+    obj4.print();
+    
+    return 0;
+}
+
