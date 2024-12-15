@@ -53,32 +53,6 @@ public:
         std::cout << "Copy assignment operator called\n";
         return *this;
     }
-
-    // Move constructor (C++11)
-    MyClass(MyClass&& other) noexcept : data(other.data) {
-        other.data = nullptr;  // Leave other in a valid state
-        std::cout << "Move constructor called\n";
-    }
-
-    // Move assignment operator (C++11)
-    MyClass& operator=(MyClass&& other) noexcept {
-        if (this != &other) {
-            delete[] data;  // Free existing resource
-            data = other.data;
-            other.data = nullptr;  // Leave other in a valid state
-        }
-        std::cout << "Move assignment operator called\n";
-        return *this;
-    }
-
-    // For printing data
-    void print() const {
-        if (data) {
-            std::cout << "Data: " << data << "\n";
-        } else {
-            std::cout << "Data is null\n";
-        }
-    }
 };
 
 int main() {
