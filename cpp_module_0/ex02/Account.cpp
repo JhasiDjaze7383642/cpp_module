@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:05:11 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/14 11:18:20 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/16 10:54:57 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@ int	Account::_totalNbWithdrawals = 0;
 
 void	Account::_displayTimestamp(void)
 {
-	// std::cout << "[" << __DATE__ << "_" << __TIME__ << "] ";
-	std::cout << "[19920104_091532] ";
+	char buffer[20];
+
+	std::time_t t = std::time(0);
+	std::tm* tm = std::localtime(&t);
+	std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S]", tm);
+	std::cout << buffer << " ";
 }
 
 Account::Account(int initial_deposit)
