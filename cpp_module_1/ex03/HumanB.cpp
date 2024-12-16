@@ -6,26 +6,19 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 11:56:11 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/15 12:29:30 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/16 09:36:59 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(void)
-{
-
-}
-
 HumanB::HumanB(std::string name)
 {
 	this->name = name;
+	this->weapon = NULL;
 }
 
-HumanB::~HumanB(void)
-{
-
-}
+HumanB::~HumanB(void) {};
 
 HumanB::HumanB(const HumanB& other)
 {
