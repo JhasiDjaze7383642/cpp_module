@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 12:43:31 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/16 11:36:48 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/16 16:10:40 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,26 @@
 #include <iostream>
 #include <string>
 
-void	replace_occurence(char **argv, std::string &line, std::ofstream &output_file)
+void	replace_occurence(char **argv, std::string line, std::ofstream &output_file)
 {
-	if (line.compare(argv[2]))
-		;
+	size_t		pos;
+	size_t		position_of_the_rest;
+	std::string	copy_of_line;
+	std::string	left;
+
+	pos = line.find(argv[2], 0);
+	position_of_the_rest = pos + std::string(argv[2]).size();
+	copy_of_line = line;
+	if (pos != line.npos)
+	{
+		copy_of_line.resize(pos);
+		output_file << copy_of_line << argv[3];
+		left = line.substr(position_of_the_rest, line.size() - position_of_the_rest);
+		if (left.find(argv[2], 0) != left.npos)
+			replace_occurence(argv, left, output_file);
+		else
+			output_file << left << '\n';
+	}
 	else
 		output_file << line << std::endl;
 }
@@ -26,7 +42,6 @@ void	copy_and_replace_occurence(char **argv, std::ofstream &output_file, std::if
 {
 	std::string	line;
 
-	(void)argv;
 	while (std::getline(input_file, line))
 		replace_occurence(argv, line, output_file);
 	output_file.close();
