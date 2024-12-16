@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 14:45:05 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/14 17:48:13 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/16 10:37:22 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ private:
 	std::string	name;
 
 public:
+	Zombie(void);
 	Zombie(std::string name);
 	~Zombie(void);
 	Zombie(const Zombie& other);
-	Zombie& operator=(const Zombie& other);
+	Zombie&			operator=(const Zombie& other);
 	void			announce(void);
 	static Zombie	*zombieHorde(int n, std::string name);
 };

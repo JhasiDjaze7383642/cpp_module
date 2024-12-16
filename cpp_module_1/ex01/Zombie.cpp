@@ -6,16 +6,15 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 14:44:42 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/14 17:48:58 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/16 10:37:17 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
-{
-	this->name = name;
-}
+Zombie::Zombie(void): name("") {};
+
+Zombie::Zombie(std::string name) : name(name) {};
 
 Zombie::~Zombie(void)
 {
@@ -36,8 +35,6 @@ void	Zombie::announce(void)
 Zombie& Zombie::operator=(const Zombie& other)
 {
 	if (this != &other)
-	{
 		this->name = other.name;
-	}
 	return (*this);
 }
