@@ -6,15 +6,22 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:20:37 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/16 17:11:48 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/16 17:58:43 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
+Harl::Harl(void)
+{
+	set_log_filter(this->log_filter, false, 4);
+};
 
-Harl::Harl(void){};
-Harl::~Harl(void) {};
+Harl::~Harl(void)
+{
+	set_log_filter(this->log_filter, false, 4);
+};
+
 Harl::Harl(const Harl &other) { (void)other; };
 Harl&	Harl::operator=(const Harl &other)
 {
@@ -54,10 +61,19 @@ void	Harl::complain(std::string level)
 	{
 		if (complain_level[pos] == level)
 		{
-			(this->*func[pos])();
+			if (log_filter[pos] == true)
+				(this->*func[pos])();
 			return ;
 		}
 
 	}
-	std::cout << "[~ WEIRD ~]\nHarl start to blush, looks like your charism get over his head.\n";
+}
+
+void	Harl::set_log_filter(bool *array, bool value, int size)
+{
+	int	pos;
+
+	pos = -1;
+	while (++pos < size)
+		array[pos] = value;
 }
