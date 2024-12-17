@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.82antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2028/12/17 08:20:15 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/17 20:29:12 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/17 21:36:42 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,25 +38,36 @@ bool	Fixed::operator!=(Fixed b) const { return(this->getRawBits() != b.getRawBit
 // Fixed	operator/(const Fixed &a, const Fixed &b) { return (Fixed(a.toFloat() / b.toFloat())); };
 
 
-Fixed	Fixed::operator+(Fixed b) const
+float	Fixed::operator+(Fixed b) const
 {
+	float	result;
 
-	return (Fixed(static_cast<float>(getRawBits() + (b.getRawBits() >> 8)) / (1 << 8)));
+	result = static_cast<float>((getRawBits()) + (b.getRawBits())) / (1 << 8);
+	return (result);
 }
 
-Fixed	Fixed::operator-(Fixed b) const
+float	Fixed::operator-(Fixed b) const
 {
-	return (Fixed(static_cast<float>(getRawBits() - (b.getRawBits() >> 8)) / (1 << 8)));
+	float	result;
+
+	result = static_cast<float>((getRawBits()) - (b.getRawBits())) / (1 << 8);
+	return (result);
 }
 
-Fixed	Fixed::operator*(Fixed b) const
+float	Fixed::operator*(Fixed b) const
 {
-	return (Fixed(static_cast<float>(getRawBits() * (b.getRawBits() >> 8)) / (1 << 8)));
+	float	result;
+
+	result = static_cast<float>((getRawBits()) * (b.getRawBits())) / (1 << 8);
+	return (result / (1 << 8));
 }
 
-Fixed	Fixed::operator/(Fixed b) const
+float	Fixed::operator/(Fixed b) const
 {
-	return (Fixed(static_cast<float>(static_cast<float>(getRawBits()) / (b.getRawBits() >> 8)) / (1 << 8)));
+	float	result;
+
+	result = static_cast<float>((getRawBits() << 8)) / (b.getRawBits() << 8);
+	return (result);
 }
 
 Fixed	&Fixed::operator++(void)
