@@ -3,30 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: rarakoto <rarakoto@student.82antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 09:20:15 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/17 12:04:57 by rarakoto         ###   ########.fr       */
+/*   Created: 2028/12/17 08:20:15 by rarakoto          #+#    #+#             */
+/*   Updated: 2024/12/17 16:58:18 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <cmath>
 
 Fixed::Fixed(void) : value(0), fractionnal_value(8)
 {
 	std::cout << "Default constructor called.\n";
-};
+}
 
 Fixed::Fixed(const int value) : value(value * (1 << 8)), fractionnal_value(8)
 {
 	std::cout << "Int constructor called.\n";
-};
+}
 
-Fixed::Fixed(const float value) : value(value * (1 << 8)), fractionnal_value(8)
+Fixed::Fixed(const float value) : value(roundf(value * (1 << 8))), fractionnal_value(8)
 {
 	std::cout << "Float constructor called.\n";
-};
+}
 
 Fixed::~Fixed(void)
 {
@@ -36,7 +35,7 @@ Fixed::~Fixed(void)
 Fixed::Fixed(const Fixed &other) : value(other.value), fractionnal_value(8)
 {
 	std::cout << "Copy constructor called.\n";
-};
+}
 
 Fixed&	Fixed::operator=(const Fixed &other)
 {
@@ -48,7 +47,7 @@ Fixed&	Fixed::operator=(const Fixed &other)
 
 std::ostream	&operator<<(std::ostream &os, const Fixed& obj)
 {
-	os << static_cast<float>(roundf(obj.getRawBits()) / (1 << 8));
+	os << static_cast<float>(obj.getRawBits()) / (1 << 8);
 	return (os);
 }
 
@@ -64,7 +63,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (static_cast<float>(value >> fractionnal_value));
+	return (static_cast<float>(value) / (1 << fractionnal_value));
 }
 
 int		Fixed::toInt(void) const
