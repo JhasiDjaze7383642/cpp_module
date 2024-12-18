@@ -1,0 +1,27 @@
+Initialization, post-pre decrementation test ---\
+0
+0.00390625
+0.00390625
+0.00390625
+0.0078125
+10.1016
+Arithmetic operation on fixed point number test ---\
+Fixed(1000.0f) + Fixed(413.0f): 1413
+Fixed(1000.0f) - Fixed(550.0f): 450
+Fixed(15.2345f) * Fixed(3.75f): 57.1289
+Fixed(123.0f) / Fixed(359.0f): 0.342618
+Max and min test ---\
+max(Fixed(31), Fixed(421.23f)): 412.23
+max(Fixed(1345.21f), Fixed(1345.35f)): 1345.35
+min(Fixed(31), Fixed(421.23f)): 31
+min(Fixed(1345.21f), Fixed(1345.35f)): 1345.21
+Comparison test ---\
+a > b: 0
+a < b: 1
+a <= b: 1
+a >= b: 0
+a != b: 1
+a == b: 1
+a <= b: 1
+a >= b: 1
+1

@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.82antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2028/12/17 08:20:15 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/17 21:36:42 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/18 10:34:30 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,6 @@ bool	Fixed::operator>=(Fixed b) const { return(this->getRawBits() >= b.getRawBit
 bool	Fixed::operator<=(Fixed b) const { return(this->getRawBits() <= b.getRawBits()); };
 bool	Fixed::operator==(Fixed b) const { return(this->getRawBits() == b.getRawBits()); };
 bool	Fixed::operator!=(Fixed b) const { return(this->getRawBits() != b.getRawBits()); };
-
-// Fixed	operator+(const Fixed &a, const Fixed &b) { return (Fixed(a.toFloat() + b.toFloat())); };
-// Fixed	operator-(const Fixed &a, const Fixed &b) { return (Fixed(a.toFloat() - b.toFloat())); };
-// Fixed	operator*(const Fixed &a, const Fixed &b) { return (Fixed(a.toFloat() * b.toFloat())); };
-// Fixed	operator/(const Fixed &a, const Fixed &b) { return (Fixed(a.toFloat() / b.toFloat())); };
-
 
 float	Fixed::operator+(Fixed b) const
 {
