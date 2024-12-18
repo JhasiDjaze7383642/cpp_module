@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.82antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2028/12/17 08:20:15 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/17 16:58:18 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/18 07:07:41 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,14 @@ Fixed::~Fixed(void)
 Fixed::Fixed(const Fixed &other) : value(other.value), fractionnal_value(8)
 {
 	std::cout << "Copy constructor called.\n";
+	operator=(other);
 }
 
 Fixed&	Fixed::operator=(const Fixed &other)
 {
+	std::cout << "Copy assignement operator called.\n";
 	if (this != &other)
 		this->value = other.value;
-	std::cout << "Copy assignement operator called.\n";
 	return (*this);
 }
 
