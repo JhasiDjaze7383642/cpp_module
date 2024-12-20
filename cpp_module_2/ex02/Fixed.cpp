@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.82antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2028/12/17 08:20:15 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/20 10:31:50 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/20 12:53:40 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,7 @@ Fixed	Fixed::operator/(Fixed b) const
 	Fixed	result;
 
 	result = Fixed();
-	result.setRawBits((getRawBits() / b.getRawBits()) << 8);
-	std::cout << static_cast<float>(((getRawBits() / b.getRawBits()) << 8)) << std::endl;
-	// std::cout << "this->value: " << getRawBits() << "; b->value: " << b.getRawBits() << std::endl;
+	result.setRawBits((getRawBits() << 8) / b.getRawBits());
 	return (result);
 }
 
