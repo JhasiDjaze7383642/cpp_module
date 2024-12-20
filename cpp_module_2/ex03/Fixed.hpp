@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 09:16:07 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/18 09:53:13 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/20 10:14:59 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ public:
 	bool				operator<=(Fixed b) const;
 	bool				operator==(Fixed b) const;
 	bool				operator!=(Fixed b) const;
-	float				operator+(Fixed b) const;
-	float				operator-(Fixed b) const;
-	float				operator*(Fixed b) const;
-	float				operator/(Fixed b) const;
+	Fixed				operator+(Fixed b) const;
+	Fixed				operator-(Fixed b) const;
+	Fixed				operator*(Fixed b) const;
+	Fixed				operator/(Fixed b) const;
 
 	int					getRawBits(void) const;
 	void				setRawBits(int const raw);

@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.82antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2028/12/17 08:20:15 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/18 09:53:06 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/20 12:53:40 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,35 +32,39 @@ bool	Fixed::operator<=(Fixed b) const { return(this->getRawBits() <= b.getRawBit
 bool	Fixed::operator==(Fixed b) const { return(this->getRawBits() == b.getRawBits()); };
 bool	Fixed::operator!=(Fixed b) const { return(this->getRawBits() != b.getRawBits()); };
 
-float	Fixed::operator+(Fixed b) const
+Fixed	Fixed::operator+(Fixed b) const
 {
-	float	result;
+	Fixed	result;
 
-	result = static_cast<float>((getRawBits()) + (b.getRawBits())) / (1 << 8);
+	result = Fixed();
+	result.setRawBits(getRawBits() + b.getRawBits());
 	return (result);
 }
 
-float	Fixed::operator-(Fixed b) const
+Fixed	Fixed::operator-(Fixed b) const
 {
-	float	result;
+	Fixed	result;
 
-	result = static_cast<float>((getRawBits()) - (b.getRawBits())) / (1 << 8);
+	result = Fixed();
+	result.setRawBits(getRawBits() - b.getRawBits());
 	return (result);
 }
 
-float	Fixed::operator*(Fixed b) const
+Fixed	Fixed::operator*(Fixed b) const
 {
-	float	result;
+	Fixed	result;
 
-	result = static_cast<float>((getRawBits()) * (b.getRawBits())) / (1 << 8);
-	return (result / (1 << 8));
+	result = Fixed();
+	result.setRawBits((getRawBits() * b.getRawBits()) >> 8);
+	return (result);
 }
 
-float	Fixed::operator/(Fixed b) const
+Fixed	Fixed::operator/(Fixed b) const
 {
-	float	result;
+	Fixed	result;
 
-	result = static_cast<float>((getRawBits() << 8)) / (b.getRawBits() << 8);
+	result = Fixed();
+	result.setRawBits((getRawBits() << 8) / b.getRawBits());
 	return (result);
 }
 

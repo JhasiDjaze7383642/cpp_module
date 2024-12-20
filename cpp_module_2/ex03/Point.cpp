@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 07:37:57 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/18 09:59:30 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/20 13:00:35 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ bool	Point::operator!=(Point other) const
 
 Point	Point::operator-(Point other) const
 {
-	return (Point(x - other.x, y - other.y));
+	return (Point((x - other.x).toFloat(), (y - other.y).toFloat()));
 }
 
 Point	Point::operator*(Point other) const
 {
-	return (Point(x * other.x, y * other.y));
+	return (Point((x * other.x).toFloat(), (y * other.y).toFloat()));
 }
 
 const Fixed	&Point::getX(void) const
