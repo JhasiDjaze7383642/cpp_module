@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.82antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2028/12/17 08:20:15 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/18 10:34:30 by rarakoto         ###   ########.fr       */
+/*   Updated: 2024/12/20 10:31:50 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,35 +32,41 @@ bool	Fixed::operator<=(Fixed b) const { return(this->getRawBits() <= b.getRawBit
 bool	Fixed::operator==(Fixed b) const { return(this->getRawBits() == b.getRawBits()); };
 bool	Fixed::operator!=(Fixed b) const { return(this->getRawBits() != b.getRawBits()); };
 
-float	Fixed::operator+(Fixed b) const
+Fixed	Fixed::operator+(Fixed b) const
 {
-	float	result;
+	Fixed	result;
 
-	result = static_cast<float>((getRawBits()) + (b.getRawBits())) / (1 << 8);
+	result = Fixed();
+	result.setRawBits(getRawBits() + b.getRawBits());
 	return (result);
 }
 
-float	Fixed::operator-(Fixed b) const
+Fixed	Fixed::operator-(Fixed b) const
 {
-	float	result;
+	Fixed	result;
 
-	result = static_cast<float>((getRawBits()) - (b.getRawBits())) / (1 << 8);
+	result = Fixed();
+	result.setRawBits(getRawBits() - b.getRawBits());
 	return (result);
 }
 
-float	Fixed::operator*(Fixed b) const
+Fixed	Fixed::operator*(Fixed b) const
 {
-	float	result;
+	Fixed	result;
 
-	result = static_cast<float>((getRawBits()) * (b.getRawBits())) / (1 << 8);
-	return (result / (1 << 8));
+	result = Fixed();
+	result.setRawBits((getRawBits() * b.getRawBits()) >> 8);
+	return (result);
 }
 
-float	Fixed::operator/(Fixed b) const
+Fixed	Fixed::operator/(Fixed b) const
 {
-	float	result;
+	Fixed	result;
 
-	result = static_cast<float>((getRawBits() << 8)) / (b.getRawBits() << 8);
+	result = Fixed();
+	result.setRawBits((getRawBits() / b.getRawBits()) << 8);
+	std::cout << static_cast<float>(((getRawBits() / b.getRawBits()) << 8)) << std::endl;
+	// std::cout << "this->value: " << getRawBits() << "; b->value: " << b.getRawBits() << std::endl;
 	return (result);
 }
 
