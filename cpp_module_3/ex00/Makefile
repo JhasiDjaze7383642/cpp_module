@@ -4,7 +4,8 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-CPP_MANDATORY_SOURCE = ./main.cpp
+CPP_MANDATORY_SOURCE = ./main.cpp \
+					   ./ClapTrap.cpp
 
 CPP_MANDATORY_OBJECT = ${CPP_MANDATORY_SOURCE:.cpp=.o} 
 
