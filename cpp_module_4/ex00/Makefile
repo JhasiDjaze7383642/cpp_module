@@ -4,7 +4,7 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-CPP_MANDATORY_SOURCE = ./wrongmain.cpp \
+CPP_MANDATORY_SOURCE = ./main.cpp \
 					   ./Animal.cpp \
 					   ./Dog.cpp \
 					   ./Cat.cpp \

@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 08:46:18 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 10:42:44 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:29:38 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 
 class Cat : public Animal
 {
-protected:
-	std::string	type;
-
 public:
 	Cat(void);
 	Cat(std::string type);
