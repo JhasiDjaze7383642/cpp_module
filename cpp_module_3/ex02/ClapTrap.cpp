@@ -6,18 +6,18 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 13:15:45 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 10:14:02 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/06 10:30:00 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name(), _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap(void) : _name(), _hit_points(100), _energy_points(50), _attack_damage(20)
 {
 	std::cout << "Default constructor of ClapTrap called.\n";
 };
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(100), _energy_points(50), _attack_damage(20)
 {
 	std::cout << "Parameterized constructor of ClapTrap called.\n";
 };
@@ -83,6 +83,11 @@ void		ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << _name << " are exhausted and can't repair himself anymore\n";
 };
 
+std::string		ClapTrap::getName(void) const
+{
+	return (_name);
+}
+
 unsigned int	ClapTrap::getHitPoints(void) const
 {
 	return (_hit_points);
@@ -96,4 +101,24 @@ unsigned int	ClapTrap::getEnergyPoints(void) const
 unsigned int	ClapTrap::getAttackDamage(void) const
 {
 	return (_attack_damage);
+}
+
+void		ClapTrap::setName(std::string name)
+{
+	_name = name;
+}
+
+void		ClapTrap::setHitPoints(unsigned int amount)
+{
+	_hit_points = amount;
+}
+
+void		ClapTrap::setEnergyPoints(unsigned int amount)
+{
+	_energy_points = amount;
+}
+
+void		ClapTrap::setAttackDamage(unsigned int amount)
+{
+	_attack_damage = amount;
 }
