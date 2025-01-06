@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 08:46:18 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/03 09:10:51 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/06 10:42:44 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include "Animal.hpp"
 # include <iostream>
 
-class Cat : Animal
+class Cat : public Animal
 {
 protected:
 	std::string	type;

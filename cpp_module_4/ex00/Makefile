@@ -1,13 +1,15 @@
-NAME = zombie
+NAME = animal
 
 CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-CPP_MANDATORY_SOURCE = ./main.cpp \
+CPP_MANDATORY_SOURCE = ./wrongmain.cpp \
 					   ./Animal.cpp \
 					   ./Dog.cpp \
-					   ./Cat.cpp
+					   ./Cat.cpp \
+					   ./WrongAnimal.cpp \
+					   ./WrongCat.cpp
 
 CPP_MANDATORY_OBJECT = ${CPP_MANDATORY_SOURCE:.cpp=.o} 
 

@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 08:48:22 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/03 09:09:17 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:08:33 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ Animal::~Animal(void)
 std::string	Animal::getType(void) const
 {
 	return (type);
+}
+
+void	Animal::setType(std::string new_type)
+{
+	type = new_type;
 }
 
 void	Animal::makeSound(void) const
