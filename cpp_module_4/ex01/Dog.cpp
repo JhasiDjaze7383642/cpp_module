@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 08:48:22 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 11:09:11 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/06 12:47:09 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,8 @@
 Dog::Dog(void) : Animal("Dog")
 {
 	std::cout << "New constructor of Dog called\n";
+	my_brain = new Brain();
 	setType("Dog");
-}
-
-Dog::Dog(std::string type) : Animal("Dog")
-{
-	std::cout << "Dog instantiated\n";
-	this->type = type;
-	setType(type);
 }
 
 Dog::Dog(const Dog &other)
@@ -41,6 +35,7 @@ Dog	&Dog::operator=(const Dog &other)
 Dog::~Dog(void)
 {
 	std::cout << "Dog have been destroyed\n";
+	delete my_brain;
 }
 
 void	Dog::makeSound(void) const
