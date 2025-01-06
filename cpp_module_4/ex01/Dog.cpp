@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 08:48:22 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 12:47:09 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/06 13:31:46 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,20 @@ Dog::Dog(void) : Animal("Dog")
 
 Dog::Dog(const Dog &other)
 {
-	if (this != &other)
-		type = other.type;
+	type = other.type;
+	this->my_brain = other.my_brain;
 }
 
 Dog	&Dog::operator=(const Dog &other)
 {
+	unsigned int	pos;
+
+	pos = -1;
 	if (this != &other)
-		type = other.type;
+	{
+		this->type = other.type;
+		this->my_brain = other.my_brain;
+	}
 	return (*this);
 }
 
