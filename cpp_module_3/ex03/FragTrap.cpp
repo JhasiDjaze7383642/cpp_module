@@ -6,15 +6,15 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 09:26:43 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 09:33:57 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/06 09:51:11 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void) : ClapTrap("")
+FragTrap::FragTrap(void) : ClapTrap("Default Name")
 {
-	std::cout << "Default constructor of FragTrap called.\n";
+	std::cout << "Default FragTrap was spawned.\n";
 	setHitPoints(100);
 	setEnergyPoints(100);
 	setAttackDamage(30);
@@ -22,7 +22,8 @@ FragTrap::FragTrap(void) : ClapTrap("")
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "Parameterized constructor of FragTrap called.\n";
+	std::cout << "FragTrap with the name " << name << " was just created\n";
+	setName(name);
 	setHitPoints(100);
 	setEnergyPoints(100);
 	setAttackDamage(30);
@@ -52,7 +53,7 @@ FragTrap	&FragTrap::operator=(const FragTrap &other)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "FragTrap " << getName() << " have been destroyed\n";
+	std::cout << "FragTrap " << getName() << " was deleted\n";
 };
 
 void	FragTrap::highFivesGuys(void)
