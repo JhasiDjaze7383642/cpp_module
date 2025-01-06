@@ -6,13 +6,13 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 13:15:45 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/02 10:23:27 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/06 10:21:39 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name(), _hit_points(100), _energy_points(50), _attack_damage(20)
+ClapTrap::ClapTrap(void) : _name(), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
 	std::cout << "Default constructor of ClapTrap called.\n";
 };
@@ -51,26 +51,36 @@ ClapTrap::~ClapTrap(void)
 
 void		ClapTrap::attack(const std::string &target)
 {
-	if (_energy_points > 0)
+	if (_energy_points > 0 && _hit_points > 0)
 	{
 		std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!\n";
 		_energy_points--;
 	}
+	else
+		std::cout << "ClapTrap " << _name << " are exhausted and can't attack anymore\n";
 };
 
 void		ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap " << _name << "took " << amount << " damage\n";
+	if (_hit_points - amount > 0)
+	{
+		std::cout << "ClapTrap " << _name << " took " << amount << " damage\n";
+		_hit_points -= (_hit_points > amount) ? amount : _hit_points;
+	}
+	else
+		std::cout << "ClapTrap " << _name << "is already dead\n";
 };
 
 void		ClapTrap::beRepaired(unsigned int amount)
 {
-	if (_energy_points > 0)
+	if (_energy_points > 0 && _hit_points > 0)
 	{
 		std::cout << "ClapTrap " << _name << " repaired himself, " << amount << " hit points restored\n";
 		_energy_points--;
 		_hit_points += amount;
 	}
+	else
+		std::cout << "ClapTrap " << _name << " are exhausted and can't repair himself anymore\n";
 };
 
 std::string		ClapTrap::getName(void) const
