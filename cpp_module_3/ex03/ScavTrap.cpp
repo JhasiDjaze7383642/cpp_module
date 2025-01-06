@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 09:26:43 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/02 10:31:07 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/06 09:30:31 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,17 @@
 ScavTrap::ScavTrap(void) : ClapTrap("")
 {
 	std::cout << "Default constructor of ScavTrap called.\n";
+	setHitPoints(100);
+	setEnergyPoints(50);
+	setAttackDamage(20);
 };
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "Parameterized constructor of ScavTrap called.\n";
+	setHitPoints(100);
+	setEnergyPoints(50);
+	setAttackDamage(20);
 };
 
 ScavTrap::ScavTrap(const ScavTrap &other)

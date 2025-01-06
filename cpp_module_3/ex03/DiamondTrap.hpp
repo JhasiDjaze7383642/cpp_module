@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 11:11:18 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/02 11:14:07 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/06 09:20:16 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ public:
 	DiamondTrap(std::string name);
 	DiamondTrap(const DiamondTrap &other);
 	~DiamondTrap(void);
+
+	void	attack(const std::string &target);
+	void	whoAmI(void);
 };
 
 #endif

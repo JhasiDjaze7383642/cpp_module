@@ -7,7 +7,8 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 CPP_MANDATORY_SOURCE = ./main.cpp \
 					   ./ClapTrap.cpp \
 					   ./ScavTrap.cpp \
-					   ./FragTrap.cpp
+					   ./FragTrap.cpp \
+					   ./DiamondTrap.cpp
 
 CPP_MANDATORY_OBJECT = ${CPP_MANDATORY_SOURCE:.cpp=.o} 
 
