@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 13:15:45 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/02 09:07:13 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/06 10:14:02 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,26 +51,36 @@ ClapTrap::~ClapTrap(void)
 
 void		ClapTrap::attack(const std::string &target)
 {
-	if (_energy_points > 0)
+	if (_energy_points > 0 && _hit_points > 0)
 	{
 		std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!\n";
 		_energy_points--;
 	}
+	else
+		std::cout << "ClapTrap " << _name << " are exhausted and can't attack anymore\n";
 };
 
 void		ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap " << _name << "took " << amount << " damage\n";
+	if (_hit_points - amount > 0)
+	{
+		std::cout << "ClapTrap " << _name << " took " << amount << " damage\n";
+		_hit_points -= (_hit_points > amount) ? amount : _hit_points;
+	}
+	else
+		std::cout << "ClapTrap " << _name << "is already dead\n";
 };
 
 void		ClapTrap::beRepaired(unsigned int amount)
 {
-	if (_energy_points > 0)
+	if (_energy_points > 0 && _hit_points > 0)
 	{
 		std::cout << "ClapTrap " << _name << " repaired himself, " << amount << " hit points restored\n";
 		_energy_points--;
 		_hit_points += amount;
 	}
+	else
+		std::cout << "ClapTrap " << _name << " are exhausted and can't repair himself anymore\n";
 };
 
 unsigned int	ClapTrap::getHitPoints(void) const
