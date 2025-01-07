@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 12:04:01 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/12 12:07:39 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/07 08:49:12 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main (int argc, char *argv[])
 			converted = argv[pos++];
 			while (++iteration < converted.size())
 				converted[iteration] = std::toupper(static_cast<unsigned char>(converted[iteration]));
-			std::cout << converted << std::endl;
+			std::cout << converted;
 		}
 	}
 	return (0);
