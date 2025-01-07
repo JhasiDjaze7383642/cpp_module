@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 14:58:16 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/14 17:18:23 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/07 10:31:31 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main (void)
 	pos = -1;
 	while (++pos < 9)
 	{
-		object[pos] = Zombie::newZombie("Ny Hasina");
+		object[pos] = Zombie::newZombie("Foo");
 		object[pos]->announce();
 		Zombie::randomChump("Oni");
 	}
