@@ -6,32 +6,24 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 07:49:15 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/18 10:11:34 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/08 13:22:47 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-static float compute_area(const Point p1, const Point p2, const Point p3)
+float crossProduct(const Point& A, const Point& B, const Point& C)
 {
-	float	area;
-
-	area =	(( p1.getX().toFloat() * ( p2.getY().toFloat() - p3.getY().toFloat() ) )
-				+ ( p2.getX().toFloat() * ( p3.getY().toFloat() - p1.getY().toFloat() ) )
-					+ ( p3.getX().toFloat() * ( p1.getY().toFloat() - p2.getY().toFloat() ) )) / 2;
-	return ((area >= 0) ? area : area * -1);
+    return ((B.getX() - A.getX()) * (C.getY() - A.getY()) - (B.getY() - A.getY()) * (C.getX() - A.getX())).toFloat();
 }
 
-bool	bsp(Point const a, Point const b, Point const c, Point const point)
+bool bsp(const Point A, const Point B, const Point C, const Point P)
 {
-	float	areaABP;
-	float	areaBCP;
-	float	areaCAP;
+    float cross1 = crossProduct(A, B, P);
+    float cross2 = crossProduct(B, C, P);
+    float cross3 = crossProduct(C, A, P);
+    bool hasSameSign1 = (cross1 >= 0 && cross2 >= 0 && cross3 >= 0);
+    bool hasSameSign2 = (cross1 <= 0 && cross2 <= 0 && cross3 <= 0);
 
-	if ((point == a) || (point == b) || (point == c))
-		return (false);
-	areaABP = compute_area(a, b, point);
-	areaBCP = compute_area(b, c, point);
-	areaCAP = compute_area(c, a, point);
-	return (areaABP + areaBCP + areaCAP == compute_area(a, b, c));
+    return (hasSameSign1 || hasSameSign2);
 }
