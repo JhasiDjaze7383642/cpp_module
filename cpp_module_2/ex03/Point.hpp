@@ -6,14 +6,13 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 07:34:21 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/18 09:30:33 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/09 10:06:53 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __POINT_HPP__
 # define __POINT_HPP__
 # include "Fixed.hpp"
-#include <fstream>
 
 class Point
 {
