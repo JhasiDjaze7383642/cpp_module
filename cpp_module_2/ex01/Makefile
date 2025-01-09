@@ -2,7 +2,7 @@ NAME = fixed
 
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -lm
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 CPP_MANDATORY_SOURCE = ./main.cpp \
 					   ./Fixed.cpp

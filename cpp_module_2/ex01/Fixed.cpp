@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.82antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2028/12/17 08:20:15 by rarakoto          #+#    #+#             */
-/*   Updated: 2024/12/18 07:07:41 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/09 09:34:39 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 Fixed::Fixed(void) : value(0), fractionnal_value(8)
 {
-	std::cout << "Default constructor called.\n";
+	std::cout << "Default constructor called\n";
 }
 
 Fixed::Fixed(const int value) : value(value * (1 << 8)), fractionnal_value(8)
 {
-	std::cout << "Int constructor called.\n";
+	std::cout << "Int constructor called\n";
 }
 
 Fixed::Fixed(const float value) : value(roundf(value * (1 << 8))), fractionnal_value(8)
 {
-	std::cout << "Float constructor called.\n";
+	std::cout << "Float constructor called\n";
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Deconstructor called.\n";
+	std::cout << "Destructor called\n";
 }
 
 Fixed::Fixed(const Fixed &other) : value(other.value), fractionnal_value(8)
 {
-	std::cout << "Copy constructor called.\n";
+	std::cout << "Copy constructor called\n";
 	operator=(other);
 }
 
