@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 08:48:11 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 10:15:34 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/10 09:08:10 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,20 @@ int main(void)
 	a.attack("Violence");
 	a.attack("Another");
 	a.attack("Again");
-	a.takeDamage(1);
+	std::cout << a.getEnergyPoints() << std::endl;
+	a.takeDamage(5);
+	a.attack("UI");
+	a.attack("UI");
+	a.attack("UI");
+	a.attack("UI");
+	a.attack("UI");
+	a.attack("UI");
+	a.attack("UI");
+	a.attack("UI");
+	a.takeDamage(10);
+	a.attack("UI");
+	a.attack("UI");
+	a.attack("UI");
 	a.attack("UI");
 	a.beRepaired(2);
 	std::cout << a.getEnergyPoints() << std::endl;
