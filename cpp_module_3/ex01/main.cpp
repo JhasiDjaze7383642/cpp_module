@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 08:48:11 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/10 09:40:44 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/10 10:02:16 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ int main(void)
 {
 	ScavTrap	a("Hasina");
 
+	std::cout << "Hit Points: " << a.getHitPoints() << std::endl;
+	std::cout << "Energy Points: " << a.getEnergyPoints() << std::endl;
+	std::cout << "Attack Damage: " << a.getAttackDamage() << std::endl;
 	a.attack("Harena");
 	a.attack("Someone");
 	a.attack("Violence");
@@ -126,7 +129,8 @@ int main(void)
 	a.attack("UI");
 	a.guardGate();
 	a.takeDamage(200);
-	std::cout << a.getEnergyPoints() << std::endl;
-	std::cout << a.getHitPoints() << std::endl;
+	std::cout << "Hit Points: " << a.getHitPoints() << std::endl;
+	std::cout << "Energy Points: " << a.getEnergyPoints() << std::endl;
+	std::cout << "Attack Damage: " << a.getAttackDamage() << std::endl;
 	return (0);
 }
