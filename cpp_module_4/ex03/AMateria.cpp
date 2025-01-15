@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 14:18:07 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 14:26:01 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:59:34 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@ std::string const	&AMateria::getType() const
 
 AMateria	*AMateria::clone() const
 {
-	AMateria	*new_amateria;
-
-	return (new_amateria);
+	return (new AMateria(type));
 }
 
 void		AMateria::use(ICharacter &target)
