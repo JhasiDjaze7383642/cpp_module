@@ -5,44 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 14:18:07 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/14 17:59:34 by rarakoto         ###   ########.fr       */
+/*   Created: 2025/01/15 16:30:38 by rarakoto          #+#    #+#             */
+/*   Updated: 2025/01/15 17:42:13 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(void)
+AMateria::AMateria(void) : type("")
 {
-	
-}
-
-AMateria::~AMateria(void)
-{
-
-}
+	std::cout << "AMateria[" << this << "]: was just created\n";
+};
 
 AMateria::AMateria(std::string const &type)
 {
+	this->type = type;
+	std::cout << "AMateria[" << this << "]: with type " << this->type << " was just created\n";
+};
 
-}
-
-AMateria	&AMateria::operator=(const AMateria &other)
+AMateria::AMateria(AMateria const &other)
 {
-	return (*this);
-}
+	this->type = other.type;
+};
 
-std::string const	&AMateria::getType() const
+AMateria	&AMateria::operator=(AMateria const &other)
+{
+	if (this != &other)
+		this->type = other.type;
+	return (*this);
+};
+
+AMateria::~AMateria(void)
+{
+	std::cout << "AMateria[" << this << "]: was destroyed\n";
+};
+
+std::string	const	&AMateria::getType(void) const
 {
 	return (type);
-}
-
-AMateria	*AMateria::clone() const
-{
-	return (new AMateria(type));
-}
-
-void		AMateria::use(ICharacter &target)
-{
-
-}
+};

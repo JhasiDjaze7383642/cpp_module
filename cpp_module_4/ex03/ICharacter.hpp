@@ -5,25 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 14:12:24 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/14 18:08:10 by rarakoto         ###   ########.fr       */
+/*   Created: 2025/01/15 15:46:54 by rarakoto          #+#    #+#             */
+/*   Updated: 2025/01/15 17:48:25 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ICHARACTER__HPP__
-# define __ICHARACTER__HPP__
-// # include "AMateria.hpp" NOTE: Can't include this one but need it though, need to figure out the problem soon.
+#ifndef __ICHARACTER_HPP__
+# define __ICHARACTER_HPP__
+# include <string>
+# include "AMateria.hpp"
+
+// class AMateria;
 
 class ICharacter
 {
-private:
-	AMateria	*items[4];
-
 public:
-	ICharacter(void);
-	ICharacter(const ICharacter &other);
-	ICharacter	&operator=(const ICharacter &other);
-	~ICharacter(void);
+	virtual ~ICharacter(void) {};
+	virtual std::string const	&getName(void) const = 0;
+	virtual void	equip(AMateria *m) = 0;
+	virtual void	unequip(int idx) = 0;
+	virtual void	use(int idx, ICharacter &target) = 0;
 };
 
-#endif // !__ICHARACTER__HPP__
+#endif

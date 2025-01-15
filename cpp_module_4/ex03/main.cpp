@@ -5,32 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 13:35:48 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 13:38:12 by rarakoto         ###   ########.fr       */
+/*   Created: 2025/01/15 17:02:37 by rarakoto          #+#    #+#             */
+/*   Updated: 2025/01/15 17:35:41 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Cure.hpp"
+
 int main (void)
 {
-	IMateriaSource	*src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	Cure			Obj;
+	AMateria	*copy;
+	AMateria	*copy2;
 
-	ICharacter	*me = new Character("me");
-
-	AMateria	*tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-
-	ICharacter	*bob = new Character("bob");
-
-	me->use(0, *bob);
-	me->use(1, *bob);
-
-	delete bob;
-	delete me;
-	delete src;
+	copy = Obj.clone();
+	std::cout << "Copy type-> " << copy->getType() << std::endl;
+	delete copy;
+	copy2 = Obj.clone();
+	std::cout << "Copy2 type-> " << copy2->getType() << std::endl;
+	delete copy2;
 	return 0;
 }

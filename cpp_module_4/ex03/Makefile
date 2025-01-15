@@ -1,10 +1,13 @@
-NAME = interface
+NAME = game
 
 CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
-CPP_MANDATORY_SOURCE = ./main.cpp
+CPP_MANDATORY_SOURCE = ./main.cpp \
+					   ./AMateria.cpp \
+					   ./Ice.cpp \
+					   ./Cure.cpp
 
 CPP_MANDATORY_OBJECT = ${CPP_MANDATORY_SOURCE:.cpp=.o} 
 
