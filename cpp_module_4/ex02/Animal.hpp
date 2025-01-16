@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 08:46:18 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 13:25:05 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:04:35 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	Animal	&operator=(const Animal &other);
 	std::string		getType(void) const;
 	void			setType(std::string new_type);
-	virtual void	makeSound(void) const;
+	virtual void	makeSound(void) const = 0;
 };
 
 #endif
