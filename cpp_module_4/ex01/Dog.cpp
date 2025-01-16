@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 08:48:22 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/16 13:40:27 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:42:17 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,6 @@ Dog::Dog(const Dog &other) : Animal("Dog")
 
 Dog	&Dog::operator=(const Dog &other)
 {
-	unsigned int	pos;
-
-	pos = -1;
 	if (this != &other)
 	{
 		this->type = other.type;
