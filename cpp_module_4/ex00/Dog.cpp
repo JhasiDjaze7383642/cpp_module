@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 08:48:22 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 11:09:11 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:27:20 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Dog::Dog(std::string type) : Animal("Dog")
 	setType(type);
 }
 
-Dog::Dog(const Dog &other)
+Dog::Dog(const Dog &other) : Animal("Dog")
 {
 	if (this != &other)
 		type = other.type;

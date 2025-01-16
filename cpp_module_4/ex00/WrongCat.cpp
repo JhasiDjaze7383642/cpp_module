@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 10:55:49 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 11:12:11 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:31:36 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ WrongCat::WrongCat(std::string type) : WrongAnimal("WrongCat")
 	setType(type);
 }
 
-WrongCat::WrongCat(const WrongCat &other)
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal("WrongCat")
 {
 	if (this != &other)
 		type = other.type;
@@ -40,4 +40,9 @@ WrongCat	&WrongCat::operator=(const WrongCat &other)
 WrongCat::~WrongCat(void)
 {
 	std::cout << "WrongCat have been destroyed\n";
+}
+
+void		WrongCat::makeSound(void) const
+{
+	std::cout << "Wrong Miaou\n";
 }

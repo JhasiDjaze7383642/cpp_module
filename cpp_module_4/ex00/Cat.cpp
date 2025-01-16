@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 08:48:22 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 11:09:27 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:27:39 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Cat::Cat(std::string type) : Animal("Cat")
 	setType("Cat");
 }
 
-Cat::Cat(const Cat &other)
+Cat::Cat(const Cat &other) : Animal("Cat")
 {
 	if (this != &other)
 		type = other.type;
