@@ -2,7 +2,7 @@ NAME = game
 
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -g -DDEBUG_PRINT=0
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -DDEBUG_PRINT=0
 
 CPP_MANDATORY_SOURCE = ./main.cpp \
 					   ./AMateria.cpp \
