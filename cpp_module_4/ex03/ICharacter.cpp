@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   ICharacter.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 16:28:13 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/16 10:36:12 by rarakoto         ###   ########.fr       */
+/*   Created: 2025/01/16 07:58:42 by rarakoto          #+#    #+#             */
+/*   Updated: 2025/01/16 08:03:03 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ICE_HPP__
-# define __ICE_HPP__
-# include "AMateria.hpp"
-# include "debug.h"
-# include <iostream>
+#include "ICharacter.hpp"
 
-class Ice : public AMateria
+std::string const	&ICharacter::getName(void) const 
 {
-public:
-	Ice(void);
-	Ice(const Ice &other);
-	Ice	&operator=(const Ice &other);
-	~Ice(void);
-	AMateria	*clone(void) const;
-	void		use(ICharacter &target);
-};
+	return ();
+}
 
-#endif
+void	ICharacter::equip(AMateria *m)
+{
+	(void)m;
+}
+
+void	ICharacter::unequip(int idx)
+{
+	(void)idx;
+}
+
+void	ICharacter::use(int idx, ICharacter &target)
+{
+	(void)idx;
+	(void)target;
+}

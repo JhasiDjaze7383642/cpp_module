@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 15:42:51 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/15 17:50:32 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:36:38 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 # define __AMATERIA_HPP__
 # include <string>
 # include <iostream>
+# include "debug.h"
 # include "ICharacter.hpp"
 
-// class ICharacter;
-// NOTE: You were about to test the use function in Class Ice and Cure,
-// but the program didn't want to compile because of AMateria
-// not been declared ad ICharacter.hpp.25.31
+class ICharacter;
+
 class AMateria
 {
 protected:

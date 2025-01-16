@@ -2,12 +2,14 @@ NAME = game
 
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -g -DDEBUG_PRINT=1
 
 CPP_MANDATORY_SOURCE = ./main.cpp \
 					   ./AMateria.cpp \
 					   ./Ice.cpp \
-					   ./Cure.cpp
+					   ./Cure.cpp \
+					   ./Character.cpp \
+					   ./MateriaSource.cpp
 
 CPP_MANDATORY_OBJECT = ${CPP_MANDATORY_SOURCE:.cpp=.o} 
 
