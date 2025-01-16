@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 15:42:51 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/16 10:36:38 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:11:41 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <iostream>
 # include "debug.h"
 # include "ICharacter.hpp"
-
-class ICharacter;
 
 class AMateria
 {
