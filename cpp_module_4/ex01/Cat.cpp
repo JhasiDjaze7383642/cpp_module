@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 08:48:22 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/16 13:40:14 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:59:21 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Cat::Cat(void) : Animal("Cat")
 Cat::Cat(const Cat &other) : Animal("Cat")
 {
 	this->type = other.type;
-	this->my_brain = other.my_brain;
+	this->my_brain = new Brain(*other.my_brain);
 }
 
 Cat	&Cat::operator=(const Cat &other)
