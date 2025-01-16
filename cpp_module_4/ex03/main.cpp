@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:02:37 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/16 13:20:50 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:25:27 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,25 @@ int main (void)
 {
 	{
 		//MateriaSource class test
-		IMateriaSource	*src = new MateriaSource;
-		AMateria		*ice_mat;
-		AMateria		*cure_mat;
-		AMateria		*non_existant_mat;
-
-		src->learnMateria(new Ice());
-		src->learnMateria(new Cure());
-		ice_mat = src->createMateria("ice");
-		cure_mat = src->createMateria("cure");
-		non_existant_mat = src->createMateria("skjdkaj");
-		std::cout << "ice_mat: getType() == " << ice_mat->getType() << std::endl;
-		std::cout << "cure_mat: getType() == " << cure_mat->getType() << std::endl;
-		if (!non_existant_mat)
-			std::cout << "non_existant_mat are OK\n";
-		else
-			std::cout << "non_existant_mat are KO\n";
-		delete src;
-		delete ice_mat;
-		delete cure_mat;
+		// IMateriaSource	*src = new MateriaSource;
+		// AMateria		*ice_mat;
+		// AMateria		*cure_mat;
+		// AMateria		*non_existant_mat;
+		//
+		// src->learnMateria(new Ice());
+		// src->learnMateria(new Cure());
+		// ice_mat = src->createMateria("ice");
+		// cure_mat = src->createMateria("cure");
+		// non_existant_mat = src->createMateria("skjdkaj");
+		// std::cout << "ice_mat: getType() == " << ice_mat->getType() << std::endl;
+		// std::cout << "cure_mat: getType() == " << cure_mat->getType() << std::endl;
+		// if (!non_existant_mat)
+		// 	std::cout << "non_existant_mat are OK\n";
+		// else
+		// 	std::cout << "non_existant_mat are KO\n";
+		// delete src;
+		// delete ice_mat;
+		// delete cure_mat;
 	}
 	{
 		//Character Class Test
@@ -45,7 +45,7 @@ int main (void)
 		{
 			// ICharacter	*me = new Character("me");
 			// ICharacter	*Bob = new Character("Bob");
-			// ICharacter	*hold_me = me;
+			// ICharacter	*old_me = me;
 			// Ice			mat;
 			//
 			// me->equip(new Ice());
@@ -82,7 +82,7 @@ int main (void)
 			//
 			// me = Bob;
 			//
-			// delete hold_me;
+			// delete old_me;
 			// delete me;
 		}
 		//Deep Copy Test
@@ -94,6 +94,10 @@ int main (void)
 			// me.equip(new Ice());
 			// me.equip(new Ice());
 			// me.equip(new Ice());
+			// me.use(0, Bob);
+			// me.use(1, Bob);
+			// me.use(2, Bob);
+			// me.use(3, Bob);
 			//
 			// Bob.equip(new Cure());
 			// Bob.equip(new Cure());
@@ -109,21 +113,21 @@ int main (void)
 	}
 	{
 		//Subject Test
-		// IMateriaSource* src = new MateriaSource();
-		// src->learnMateria(new Ice());
-		// src->learnMateria(new Cure());
-		// ICharacter* me = new Character("me");
-		// AMateria* tmp;
-		// tmp = src->createMateria("ice");
-		// me->equip(tmp);
-		// tmp = src->createMateria("cure");
-		// me->equip(tmp);
-		// ICharacter* bob = new Character("bob");
-		// me->use(0, *bob);
-		// me->use(1, *bob);
-		// delete bob;
-		// delete me;
-		// delete src;
+		IMateriaSource* src = new MateriaSource();
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		ICharacter* me = new Character("me");
+		AMateria* tmp;
+		tmp = src->createMateria("ice");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		ICharacter* bob = new Character("bob");
+		me->use(0, *bob);
+		me->use(1, *bob);
+		delete bob;
+		delete me;
+		delete src;
 	}
 	return 0;
 }
