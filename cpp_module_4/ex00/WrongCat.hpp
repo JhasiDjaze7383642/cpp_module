@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 10:55:14 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/06 11:00:05 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:30:57 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	WrongCat(const WrongCat &other);
 	WrongCat	&operator=(const WrongCat &other);
 	~WrongCat(void);
+	void		makeSound(void) const;
 };
 
 #endif
