@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 09:04:17 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/16 10:36:52 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:16:08 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class MateriaSource : public IMateriaSource
 {
 private:
-	AMateria	*Materia[MAX_MATERIA];
+	AMateria		*Materia[MAX_MATERIA];
 	unsigned short	mat_pos;
 
 public:
