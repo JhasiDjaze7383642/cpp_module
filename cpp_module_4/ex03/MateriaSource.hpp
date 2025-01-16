@@ -6,7 +6,7 @@
 /*   By: rarakoto <rarakoto@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 09:04:17 by rarakoto          #+#    #+#             */
-/*   Updated: 2025/01/16 14:16:08 by rarakoto         ###   ########.fr       */
+/*   Updated: 2025/01/16 14:17:47 by rarakoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ public:
 	MateriaSource(const MateriaSource &other);
 	MateriaSource		&operator=(const MateriaSource &other);
 	~MateriaSource(void);
-	void		learnMateria(AMateria* m);
-	AMateria*	createMateria(std::string const & type);
+	void				learnMateria(AMateria* m);
+	AMateria*			createMateria(std::string const & type);
 };
 
 #endif
